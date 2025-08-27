@@ -4,3 +4,9 @@ C:\Users\kronb\RiderProjects\NumberGuesser\NumberGuesser\bin\Debug\NumberGuesser
 C:\Users\kronb\RiderProjects\NumberGuesser\NumberGuesser\bin\Debug\NumberGuesser.pdb
 C:\Users\kronb\RiderProjects\NumberGuesser\NumberGuesser\obj\Debug\NumberGuesser.exe
 C:\Users\kronb\RiderProjects\NumberGuesser\NumberGuesser\obj\Debug\NumberGuesser.pdb
+C:\Users\kronb\RiderProjects\NumberGuesserGIT\NumberGuesserPL\NumberGuesser\bin\Debug\NumberGuesser.exe
+C:\Users\kronb\RiderProjects\NumberGuesserGIT\NumberGuesserPL\NumberGuesser\bin\Debug\NumberGuesser.pdb
+C:\Users\kronb\RiderProjects\NumberGuesserGIT\NumberGuesserPL\NumberGuesser\obj\Debug\NumberGuesser.csproj.AssemblyReference.cache
+C:\Users\kronb\RiderProjects\NumberGuesserGIT\NumberGuesserPL\NumberGuesser\obj\Debug\NumberGuesser.csproj.CoreCompileInputs.cache
+C:\Users\kronb\RiderProjects\NumberGuesserGIT\NumberGuesserPL\NumberGuesser\obj\Debug\NumberGuesser.exe
+C:\Users\kronb\RiderProjects\NumberGuesserGIT\NumberGuesserPL\NumberGuesser\obj\Debug\NumberGuesser.pdb

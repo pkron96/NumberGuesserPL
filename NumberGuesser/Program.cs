@@ -1,4 +1,5 @@
 using System;
+using System.Net.Mime;
 
 namespace NumberGuesser
 {
@@ -44,17 +45,19 @@ namespace NumberGuesser
 
         static void Game()
         {
-            numbersRange(out int lower, out int upper);
+            numbersRange(out int lower, out int upper, out int numberOfTries);
             int lowerNum = lower;
             int upperNum = upper;
-            
+            int guessNum = 0;
             int correctNumber = randomNumber(lowerNum, upperNum);
             bool correctAnswer = false;
             Console.WriteLine("Zgadnij liczbę: ");
-            while (correctAnswer == false)
+            
+            while (correctAnswer == false && guessNum < numberOfTries)
             {
                 string input = Console.ReadLine();
                 int guess;
+                
                 bool isNumber = int.TryParse(input, out guess);
                 if (!isNumber)
                 {
@@ -67,35 +70,50 @@ namespace NumberGuesser
                     PrintColorMessage(ConsoleColor.Yellow, $"$Wprowadź {lowerNum}-{upperNum}!");
                     continue;
                 }
-
+                guessNum++;
                 if (guess < correctNumber)
                 {
                     PrintColorMessage(ConsoleColor.Red, "Źle, wylosowana jest większa");
+                    
                 }
                 else if (guess > correctNumber)
                 {
                     PrintColorMessage(ConsoleColor.Red, "Źle, wylosowana jest mniejsza");
+                    
                 }
                 else
                 {
                     correctAnswer = true;
                     PrintColorMessage(ConsoleColor.Green, "Prawidłowa odpowiedź!!");
-                    
+                    PrintColorMessage(ConsoleColor.Blue, $"Ilość prób: {guessNum}");
                 }
+                
+                    
+                
             }
-            
+
+            if (!correctAnswer)
+            {
+                PrintColorMessage(ConsoleColor.Red, "Przegrałeś!");
+                Environment.Exit(0);
+            }
+           
+
         }
 
-        static void numbersRange(out  int lowerNumber, out int upperNumber)
+        static void numbersRange(out  int lowerNumber, out int upperNumber, out int numOfTries)
         {
             Console.WriteLine("Podaj najmniejszą liczbę z zakresu do odgadnięcia: ");
             lowerNumber = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj największą liczbę z zakresu do odgadnięcia: ");
             upperNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj ilość prób, które chcesz mieć: ");
+            numOfTries = int.Parse(Console.ReadLine());
+            
             if (upperNumber <= lowerNumber)
             {
                 PrintColorMessage(ConsoleColor.Yellow, "Druga liczba powinna być większa niż pierwsza!");
-                numbersRange(out lowerNumber,  out upperNumber);
+                numbersRange(out lowerNumber,  out upperNumber, out numOfTries);
             }
            
         }
